@@ -1,32 +1,22 @@
 import matplotlib.pyplot as plt
+
 def graficarEnBarras(dataFrame, campoX, campoY, nombreGrafica):
     colores = ['green', 'red']
-    salarioPromedio = dataFrame.groupby(campoX)[campoY].mean()
+    datos_agrupados = dataFrame.groupby(campoX)[campoY].sum()
 
-    # Obtener los valores únicos de ciudad como lista ordenada
-    ciudades = sorted(list(set(salarioPromedio.index)))
+    veredas = datos_agrupados.index
+    cantidad_arboles = datos_agrupados.values
 
-    # Obtener los valores correspondientes de cantidad de árboles
-    arboles = salarioPromedio[ciudades]
+    print(f'Datos de la gráfica: {nombreGrafica}')
+    print('Veredas:', veredas)
+    print('Cantidad de árboles:', cantidad_arboles)
 
-    # Generar la gráfica
-    plt.bar(ciudades, arboles, color=colores)
+    plt.bar(veredas, cantidad_arboles, color=colores)
 
-    plt.title("Análisis de Siembras de Árboles")
-    plt.xlabel("Ciudad")
-    plt.ylabel("Árboles")
+    plt.title("Cantidad de Árboles por Vereda")
+    plt.xlabel(campoX)
+    plt.ylabel(campoY)
+
+    plt.xticks(rotation=90)
 
     plt.savefig(f'./assets/img/{nombreGrafica}.png')
-
-'''def graficarEnBarras(dataFrame,campoX,campoY,nombreGrafica):
-    colores=['green','red']
-    salarioPromedio=dataFrame.groupby(campoX)[campoY].mean()
-
-    #Generar la grafica
-    plt.bar(salarioPromedio.index,salarioPromedio,color=colores)
-
-    plt.title("Analisis De Siembras De Arboles ")
-    plt.xlabel("Ciudad")
-    plt.ylabel("Arboles")
-
-    plt.savefig(f'./assets/img/{nombreGrafica}.png') '''
