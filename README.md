@@ -11,7 +11,10 @@
 Aprendiendo a manejar datos con pandas y a graficar con matplotlib
 
 ### Programado por: 
+
 **Daniel Giraldo Hurtado**
+
 **Santiago Suarez Buitrago**   
+
 **Kevin Alejandro Morales**   
 
