@@ -8,7 +8,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ## Descripción:
-Aorendiendo a manejar datos con pandad y a gragicar con matplotlib
+Aprendiendo a manejar datos con pandas y a graficar con matplotlib
 
 ### Programado por: 
 **Daniel Giraldo Hurtado**
